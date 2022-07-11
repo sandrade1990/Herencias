@@ -1,5 +1,6 @@
 
 from django.http import HttpResponse
+from django.shortcuts import render
 from AppMvt.models import Familiares
 from django.template import Template, Context
 
@@ -19,5 +20,9 @@ def Familia(Self):
     documento=plantilla.render(contexto)
 
     return HttpResponse(documento)
+
+def inicio(request):
+
+    return render(request,"AppMvt/inicio.html")
 
 
